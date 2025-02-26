@@ -31,7 +31,7 @@ void *transferAccount1toAccount2(void *transferAmount) {
     }
     printf("Thread 1 acquired lock on account 1.\n");
     fflush(stdout);
-    usleep(100);
+    usleep(10000); //wait to make deadlock more likely
 
     printf("Thread 1 about to attempt to acquire access to lock on account 2.\n");
     fflush(stdout);
@@ -88,7 +88,7 @@ void *transferAccount2toAccount1(void *transferAmount) {
     }
     printf("Thread 2 acquired lock on account 2.\n");
     fflush(stdout);
-    usleep(100);
+    usleep(10000);
 
     printf("Thread 2 about to attempt to acquire access to lock on account 1.\n");
     fflush(stdout);
@@ -114,8 +114,8 @@ void *transferAccount2toAccount1(void *transferAmount) {
     accountBalance2 -= amount;
     accountBalance1 += amount;
 
-    printf("Thread 2 transferred %.2f from account2 to account1. Account2 balance: %.2f, Account1 balance: %.2f.\n",
-           amount / 100.0, accountBalance2 / 100.0, accountBalance1 / 100.0);
+    printf("Thread 2 transferred %.2f from account2 to account1. Account 1 balance: %.2f, Account 2 balance: %.2f.\n",
+           amount / 100.0, accountBalance1 / 100.0, accountBalance2 / 100.0);
 
     pthread_mutex_unlock(&mutex1);
     pthread_mutex_unlock(&mutex2);
@@ -170,8 +170,8 @@ void *fixedTransferAccount2toAccount1(void *transferAmount) {
     accountBalance2 -= amount;
     accountBalance1 += amount;
 
-    printf("Thread 2 transferred %.2f from account2 to account1. Account2 balance: %.2f, Account1 balance: %.2f.\n",
-           amount / 100.0, accountBalance2 / 100.0, accountBalance1 / 100.0);
+    printf("Thread 2 transferred %.2f from account 2 to account 1. Account 1 balance: %.2f, Account 2 balance: %.2f.\n",
+           amount / 100.0, accountBalance1 / 100.0, accountBalance2 / 100.0);
 
     pthread_mutex_unlock(&mutex1);
     pthread_mutex_unlock(&mutex2);
@@ -181,7 +181,10 @@ void *fixedTransferAccount2toAccount1(void *transferAmount) {
 int main() {
     pthread_t thread1, thread2;
     int transferAmount = 1000;
-
+    printf("Scenario 1: Deadlock occurs with a timedlock.\n");
+    printf("Initial account 1 balance is %.2f.\n", accountBalance1 / 100.00);
+    printf("Initial account 2 balance is %.2f.\n", accountBalance2 / 100.00);
+    fflush(stdout);
     pthread_create(&thread1, NULL, transferAccount1toAccount2, &transferAmount);
     pthread_create(&thread2, NULL, transferAccount2toAccount1, &transferAmount);
     
@@ -191,7 +194,10 @@ int main() {
     printf("Final account 1 balance is %.2f.\n", accountBalance1 / 100.00);
     printf("Final account 2 balance is %.2f.\n", accountBalance2 / 100.00);
 
-    
+    printf("Scenario 2: Fixed deadlock with proper resource ordering.\n");
+    accountBalance1 = 10000;
+    accountBalance2 = 5000;
+    fflush(stdout);
     pthread_create(&thread1, NULL, transferAccount1toAccount2, &transferAmount);
     pthread_create(&thread2, NULL, fixedTransferAccount2toAccount1, &transferAmount);
 
