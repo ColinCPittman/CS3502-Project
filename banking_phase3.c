@@ -86,7 +86,10 @@ void *transferAccount2toAccount1(void *transferAmount) {
 int main() {
     pthread_t thread1, thread2;
     int transferAmount = 1000; 
-
+    printf("Initial account 1 balance is %.2f.\n", accountBalance1 / 100.00);
+    fflush(stdout);
+    printf("Final balances will not print because deadlock will occur.\n");
+    fflush(stdout);
     pthread_create(&thread1, NULL, transferAccount1toAccount2, &transferAmount);
     pthread_create(&thread2, NULL, transferAccount2toAccount1, &transferAmount);
 
@@ -94,7 +97,9 @@ int main() {
     pthread_join(thread2, NULL);
 
     printf("Final account 1 balance is %.2f.\n", accountBalance1 / 100.00);
+    fflush(stdout);
     printf("Final account 2 balance is %.2f.\n", accountBalance2 / 100.00);
+    fflush(stdout);
 
     return 0;
 }
