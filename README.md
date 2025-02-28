@@ -51,8 +51,8 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
         *   Select "Multiple windows" or "One large window" display mode.
         *   Choose "Start no client".
         *   Under "Extra settings", check "Disable access control".
-        *   Click "Save configuration" to save settings for future use (optional).
-        *   Click "Finish". VcXsrv should now be running in your system tray.
+        *   Click "Save configuration" 
+        *   Click "Finish"
 
     **Install XFCE and related packages in Ubuntu WSL:**
         ```bash
