@@ -62,6 +62,7 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
         *   Select "Multiple windows" or "One large window" display mode.
         *   Choose "Start no client".
         *   Under "Extra settings", check "Disable access control".
+        *   Disable "Native OpenGL" to resolve redering issues with running VS Code in XFCE if your plan on using XFCE4.
         *   Click "Save configuration" 
         *   Click "Finish"
 
