@@ -77,4 +77,12 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
         export DISPLAY=:0
         xfce4-session
         ```
+
+        Or you may have better luck with Xming: https://sourceforge.net/projects/xming/
+        This resolved the rendering issues for me on VcXsrv after I had to re-setup my computer over a windows update forcing me to wipe and reset my computer mid-project. 
+        Under the default settings these commands should route the display for XFCE4
+        ```bash
+            export DISPLAY=:0
+            echo $DISPLAY
+        ```
         If that doesn't work. I was able to have some success with this guide the first go-around https://www.youtube.com/watch?v=YxQMDBnrMws, however after a windows reset, I wasn't able to get this working on a second Linux setup. 
