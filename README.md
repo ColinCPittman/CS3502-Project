@@ -44,9 +44,9 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
 
 10.  **Optional: Install a Graphical Desktop Environment (XFCE) for WSL (if you need GUI applications):**
 
-11.  **Install VcXsrv X Server on Windows:** Download and install VcXsrv from [https://sourceforge.net/projects/vcxsrv/](https://sourceforge.net/projects/vcxsrv/).
+     **Install VcXsrv X Server on Windows:** Download and install VcXsrv from [https://sourceforge.net/projects/vcxsrv/](https://sourceforge.net/projects/vcxsrv/).
 
-    **Configure VcXsrv:**
+ **Configure VcXsrv:**
     *   Run XLaunch.
     *   Select "Multiple windows" or "One large window" display mode.
     *   Choose "Start no client".
