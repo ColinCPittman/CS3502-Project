@@ -24,25 +24,36 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
    ```
    To install Firefox in the Linux environment. 
 5.  **Install Visual Studio Code (VS Code)** Download and install VS Code from the official website: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+       * Alternatively this also worked for me on one of my setups:
+       * ```bash
+             sudo apt update
+            sudo apt install wget gpg
+            wget -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+            sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+            sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+            rm -f packages.microsoft.gpg
+            sudo apt update
+            sudo apt install code
+        ```
 
-6.  **Install VS Code Remote - WSL Extension:**
+7.  **Install VS Code Remote - WSL Extension:**
    Open VS Code on Windows.
     Go to the Extensions view (`Ctrl+Shift+X` or click the Extensions icon in the Activity Bar).
     Search for "Remote - WSL" and install the extension by Microsoft.
 
-7.  **Connect VS Code to WSL:**
+8.  **Connect VS Code to WSL:**
     After installing the Remote - WSL extension. 
     Ctr+Shift+P then type "Remote-WSL: New Window". to open a new VS Code window connected to Ubuntu WSL environment.
 
-8.  **Install C/C++ Extension Pack in VS Code (WSL):**
+9.  **Install C/C++ Extension Pack in VS Code (WSL):**
     In the VS Code window connected to WSL, go to the Extensions
     Search for "C/C++ Extension Pack" and install the extension by Microsoft.
 
-9.  **Install Code Runner Extension in VS Code (WSL):**
+10.  **Install Code Runner Extension in VS Code (WSL):**
     In the VS Code window connected to WSL, go to the Extensions
     Search for "Code Runner" and install the extension by Jun Han. This is just to simplify running and building code snippets and files directly within VS Code.
 
-10.  **Optional: Install a Graphical Desktop Environment (XFCE) for WSL (if you need GUI applications):**
+11.  **Optional: Install a Graphical Desktop Environment (XFCE) for WSL (if you need GUI applications):**
 
      -**Install VcXsrv X Server on Windows:** Download and install VcXsrv from [https://sourceforge.net/projects/vcxsrv/](https://sourceforge.net/projects/vcxsrv/).
 
