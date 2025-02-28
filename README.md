@@ -17,7 +17,7 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
     sudo apt install build-essential gdb
     ```
     To installo `gcc`, `g++` (C++ compiler), `make`, and `gdb` (GNU Debugger for compiling and debugging C/C++ code.
-3. **Install Firefox** (optional but recommended as step 4 assumes you will have this installed.
+3. **Install Firefox** (optional but recommended as step 4 assumes you will have this installed.)
     Run:
    ```bash
    sudo apt install firefox
@@ -36,7 +36,7 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
 
 8.  **Install C/C++ Extension Pack in VS Code (WSL):**
     In the VS Code window connected to WSL, go to the Extensions
-    Search for "C/C++ Extension Pack" and install the extension by Microsoft. This pack includes essential C/C++ development features.
+    Search for "C/C++ Extension Pack" and install the extension by Microsoft.
 
 9.  **Install Code Runner Extension in VS Code (WSL):**
     In the VS Code window connected to WSL, go to the Extensions
