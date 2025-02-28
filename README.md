@@ -26,7 +26,7 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
 5.  **Install Visual Studio Code (VS Code)** Download and install VS Code from the official website: [https://code.visualstudio.com/](https://code.visualstudio.com/)
        * Alternatively this also worked for me on one of my setups:
        * ```bash
-             sudo apt update
+            sudo apt update
             sudo apt install wget gpg
             wget -O- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
             sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
