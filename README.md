@@ -34,7 +34,7 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
             rm -f packages.microsoft.gpg
             sudo apt update
             sudo apt install code
-        ```
+            ```
 
 7.  **Install VS Code Remote - WSL Extension:**
    Open VS Code on Windows.
