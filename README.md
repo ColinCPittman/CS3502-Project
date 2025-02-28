@@ -46,7 +46,7 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
 
 11.  **Install VcXsrv X Server on Windows:** Download and install VcXsrv from [https://sourceforge.net/projects/vcxsrv/](https://sourceforge.net/projects/vcxsrv/).
 
-**Configure VcXsrv:**
+    **Configure VcXsrv:**
     *   Run XLaunch.
     *   Select "Multiple windows" or "One large window" display mode.
     *   Choose "Start no client".
@@ -54,15 +54,15 @@ CS 3502: Project 1 - Multi-Threaded Programming and IPC
     *   Click "Save configuration" 
     *   Click "Finish"
 
-**Install XFCE and related packages in Ubuntu WSL:**
+    **Install XFCE and related packages in Ubuntu WSL:**
         ```bash
         sudo apt update
         sudo apt install xfce4 xfce4-goodies
         ```
 
-**Launch XFCE session:** In your Ubuntu WSL terminal, execute:
+    **Launch XFCE session:** In your Ubuntu WSL terminal, execute:
         ```bash
         export DISPLAY=:0
         xfce4-session
         ```
-If that doesn't work. I was able to have some success with this guide the first go-around https://www.youtube.com/watch?v=YxQMDBnrMws, however after a windows reset, I wasn't able to get this working on a second Linux setup. 
+    If that doesn't work. I was able to have some success with this guide the first go-around https://www.youtube.com/watch?v=YxQMDBnrMws, however after a windows reset, I wasn't able to get this working on a second Linux setup. 
